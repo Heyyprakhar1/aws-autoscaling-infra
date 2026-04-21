@@ -42,3 +42,16 @@ module "asg" {
   key_name = var.key_name
   ec2_sg_id = module.security_groups.ec2_sg_id
 }
+
+module "rds" {
+  source = "./modules/rds"
+
+  project_name       = var.project_name
+  db_instance_class  = var.db_instance_class
+  private_subnet_ids = module.vpc.private_subnet_ids
+  db_name            = var.db_name
+  db_username        = var.db_username
+  db_password        = var.db_password
+  rds_sg_id          = module.security_groups.rds_sg_id
+  skip_final_snapshot = true
+}

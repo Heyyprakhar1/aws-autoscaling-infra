@@ -25,3 +25,11 @@ output "alb_dns_name" {
 output "alb_sg_id" {
   value = module.security_groups.alb_sg_id
 }
+
+output "rds_sg_id" {
+  value = module.security_groups.rds_sg_id
+}
+
+output "rds_endpoint" {
+  value = module.rds.rds_instance_endpoint
+}

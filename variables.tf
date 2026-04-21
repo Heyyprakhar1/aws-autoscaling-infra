@@ -76,3 +76,27 @@ variable "scaling_adjustment" {
   type    = number
   default = 1
 }
+
+variable "db_instance_class" {
+  description = "Instance class for RDS"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_username" {
+  description = "RDS username"
+  type        = string
+  default     = "admin"
+}
+
+variable "db_password" {
+  description = "RDS password"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_name" {
+  description = "RDS database name"
+  type        = string
+  default     = "mydatabase"
+}
