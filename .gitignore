@@ -4,3 +4,4 @@
 *.tfstate.backup
 *.tfplan
 terraform.tfvars
+autoscaling-infra-key.pem

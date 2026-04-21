@@ -26,3 +26,19 @@ module "alb" {
   project_name     = var.project_name
   environment      = var.environment
 }
+
+module "asg" {
+  source = "./modules/asg"
+
+  name_prefix = var.project_name
+  image_id    = var.image_id
+  instance_type = var.instance_type
+  desired_capacity = var.desired_capacity
+  max_size = var.max_size
+  min_size = var.min_size
+  target_group_arn = module.alb.target_group_arn
+  scaling_adjustment = var.scaling_adjustment
+  private_subnet_ids = module.vpc.private_subnet_ids
+  key_name = var.key_name
+  ec2_sg_id = module.security_groups.ec2_sg_id
+}
