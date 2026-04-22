@@ -2,7 +2,7 @@
 
 A production-grade, modular Terraform project that provisions a fully functional auto-scaling web application infrastructure on AWS. Built to demonstrate real-world DevOps skills — not just "terraform apply and pray."
 
-> ✅ **Status: Live** — 25 resources successfully provisioned on AWS (`ap-south-1`)
+> ✅ **Status: Live** — 28 resources successfully provisioned on AWS (`ap-south-1`)
 
 ---
 
@@ -17,7 +17,7 @@ Here's what gets created:
 - An **Auto Scaling Group (ASG)** with a Launch Template that boots EC2 instances automatically
 - An **RDS MySQL instance** sitting safely in a private subnet — not exposed to the internet
 - **Security Groups** with least-privilege rules (ALB → EC2 → RDS, nothing more)
-- **CloudWatch Alarms** that trigger scale-up/scale-down based on CPU usage *(in progress)*
+- **CloudWatch Alarms** that trigger scale-up/scale-down based on CPU usage
 - Local state currently — **remote state (S3 + DynamoDB)** setup planned
 
 ---
@@ -248,7 +248,7 @@ terraform.tfvars
 
 ## 🗺️ Roadmap
 
-- [ ] CloudWatch alarms module (in progress)
+- [X] CloudWatch alarms module
 - [ ] Remote state backend (S3 + DynamoDB)
 - [ ] HTTPS support — ACM cert + ALB HTTPS listener
 - [ ] Ansible branch — configuration management on top of this infra
