@@ -33,3 +33,12 @@ resource "aws_autoscaling_policy" "main" {
     cooldown                = 300
     autoscaling_group_name = aws_autoscaling_group.main.name
 }
+
+resource "aws_autoscaling_policy" "scale_down" {
+  name                   = "${var.name_prefix}-scale-down-policy"
+  scaling_adjustment     = -1
+  policy_type            = "SimpleScaling"
+  adjustment_type        = "ChangeInCapacity"
+  cooldown               = 300
+  autoscaling_group_name = aws_autoscaling_group.main.name
+}

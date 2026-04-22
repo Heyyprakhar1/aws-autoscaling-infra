@@ -1,7 +1,7 @@
 variable "aws_region" {
-	description = "AWS region to deploy resources"
-	type = string
-	default = "ap-south-1"
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "ap-south-1"
 }
 
 variable "project_name" {
@@ -43,7 +43,7 @@ variable "environment" {
 variable "image_id" {
   description = "AMI ID for EC2 instances"
   type        = string
-  
+
 }
 
 variable "instance_type" {
@@ -99,4 +99,10 @@ variable "db_name" {
   description = "RDS database name"
   type        = string
   default     = "mydatabase"
+}
+
+variable "asg_name" {
+  description = "Name prefix for Auto Scaling Group"
+  type        = string
+  default     = "asg_sg"
 }
