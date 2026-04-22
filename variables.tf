@@ -104,5 +104,5 @@ variable "db_name" {
 variable "asg_name" {
   description = "Name prefix for Auto Scaling Group"
   type        = string
-  default     = "asg_sg"
+  default     = "autoscaling-infra-asg"
 }
